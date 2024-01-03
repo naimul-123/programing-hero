@@ -1,0 +1,24 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header{
+    background-color: aquamarine;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header li{
+    display: inline;
+    height: 50px; 
+    padding: 15px;
+    font-size: 1.5rem;
+}
+#header li:hover{
+    background-color: aqua;
+}
