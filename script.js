@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    listitems[moduleCounter].classList.add('active')
     fetch(`${modules[moduleCounter]}.html`)
     .then(response=> response.text())
     .then(data=> document.getElementById("contentArea").innerHTML = data);
@@ -22,9 +23,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 const prevBtns = document.querySelectorAll(".prevBtn");
 prevBtns.forEach((btn)=>{
     btn.addEventListener('click', ()=>{
-        // console.log(modules[moduleCounter])
+        listitems.forEach((list)=>{
+            list.classList.remove("active")
+        });
         if(moduleCounter>0){
             moduleCounter--
+            listitems[moduleCounter].classList.add('active')
             fetch(`${modules[moduleCounter]}.html`)
             .then(response=> response.text())
             .then(data=> document.getElementById("contentArea").innerHTML = data);
@@ -42,11 +46,12 @@ prevBtns.forEach((btn)=>{
 const nextBtns = document.querySelectorAll(".nextBtn");
 nextBtns.forEach((btn)=>{
     btn.addEventListener('click', ()=>{
-        // console.log(moduleCounter)
+        listitems.forEach((list)=>{
+            list.classList.remove("active")
+        });
         if(moduleCounter<modules.length-1){
             moduleCounter++
-            // console.log(moduleCounter)
-
+            listitems[moduleCounter].classList.add('active')
             fetch(`${modules[moduleCounter]}.html`)
             .then(response=> response.text())
             .then(data=> document.getElementById("contentArea").innerHTML = data);
@@ -66,15 +71,21 @@ nextBtns.forEach((btn)=>{
     const listitems = document.querySelectorAll(".listItem");
     listitems.forEach((list)=>{
         list.addEventListener('click',()=>{
+            
             modules.map((module, index)=>{
+                listitems[index].classList.remove("active");  
                 if(module=== list.innerHTML){
                     moduleCounter= index;
                     fetch(`${module}.html`)
                     .then(response=> response.text())
                     .then(data=> document.getElementById("contentArea").innerHTML = data);
+                    list.classList.add("active");
                 }
+
+             
                 //console.log(moduleCounter)
             })
+            
         })
     })
     

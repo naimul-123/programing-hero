@@ -22,3 +22,81 @@
 #header li:hover{
     background-color: aqua;
 }
+#main{
+    display: flex;
+    flex-direction: row;
+
+}
+#sideNav, #content, #rightSidebar{
+    margin: 0 5px;
+    
+}
+#sideNav{
+    width: 10%;
+    min-width: 200px;
+    text-align: left;
+    
+
+}
+.innerNav{
+    background-color: #E7E9EB;
+    height: 100%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 20px;
+
+}
+.active, .active:hover{
+    background-color: #04AA6D;
+    color: white;
+}
+.listItem:hover{
+    background-color:#cccccc ;
+}
+.active:hover{
+    background-color: #04AA6D !important;
+    color: white !important;
+}
+.listItem{
+display: block;
+line-height: 1.5;
+padding: 2px 1px 1px 16px;
+font-size: 1.2rem;
+}
+#content{
+    width: 75%;
+}
+
+#rightSidebar{
+    width: 15%;
+    min-width: 100px;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+   
+}
+
+.prevBtn, .nextBtn{
+    background-color: #04AA6D;
+    border-color: #04AA6D;
+    font-size: 18px;
+    padding: 0 19px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color:#FFFFFF
+
+} 
+.btn{
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: center;
+    text-align: center;
+    white-space: nowrap;
+}
