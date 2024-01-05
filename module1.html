@@ -1,3 +1,270 @@
 <h2 class="contentHeader">
     This is module 1
 </h2>
+
+<div class="content">
+    <h3>What is HTML?</h3>
+    <p>HTML= Hyper Text Markup Language</p>
+    <ul>
+        <li>H=Hyper which means Reference/link</li>
+        <li>T=Text which means Data/Information</li>
+        <li>M= Markup Which Means Predefined/Marked</li>
+        <li>L= Language Which Means Communication</li>
+        <li></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h3>HTML Structure</h3>
+    <code>
+        
+       &lt;!DOCTYPE html &gt; <br>
+       &lt;html lang="en"&gt; <br>
+       &lt;head&gt; <br>
+       &lt;meta charset="UTF-8"&gt; <br>
+       &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+       &lt;title>Document &lt;/title&gt; <br>
+       &lt;/head&gt; <br>
+       &lt;body&gt; <br>
+            
+       &lt;/body&gt; <br>
+       &lt;/html&gt; <br>
+
+    </code>
+</div>
+<div class="content">
+    <h3>HTML Structure Defination</h3>
+    <ul>
+        <li><strong>Doctype:</strong>Gives information to the browser about the document type and version</li>
+        <li><strong>html:</strong>Represents the root of an HTML document. It is a container for all the html elements except for the Doctype</li>
+        <li><strong>Head:</strong>A container for metadata and is placed between the &lt;html&gt; tag and the &lt;body&gt; tag.</li>
+        <li><strong>meta:</strong> defines metadata about an HTML document. Metadata is data(information) about data.</li>
+        <li><strong>title:</strong> tag defines the title of the document.</li>
+        <li><strong>body:</strong>contains all the contents of an HTML document</li>
+        <li><strong>comment:</strong>a section of text that is not processed by the web browser. Comments are enclosed in &lt;! ----&gt; tags.</li>
+    </ul>
+</div>
+    <div class="content">
+        <h3>Pragraph Tag</h3>
+        <p> &lt;p&gt;tag defines a paragraph</p>
+        <code>
+            &lt;p&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas cum corrupti, maxime earum natus aperiam inventore! Fuga commodi, error repellendus reprehenderit laudantium illum illo, aut aliquam inventore atque quam provident.
+            &lt;/p&gt;
+        </code>
+    </div>
+    <div class="content">
+        <h4>Button Tag</h4>
+        <p> &lt;button&gt;tag defines a clickable</p>
+        <code>
+            &lt;button&gt;Click Me
+            &lt;/button&gt;
+        </code>
+    </div>
+    <div class="content">
+        <h3>Heading Tag</h3>
+        <ul>
+            <li>The &lt;h1&gt; to &lt;h6&gt; tags are used to define HTML heading</li>
+            <li> &lt;h1&gt; defines the most important heading. A page should have only one h1 tag</li>
+            <li> &lt;h6&gt; defines the least important heading</li>
+        </ul>
+        <code>
+            &lt;h1&gt;HEADING1&lt;/h1&gt;
+        </code>
+    </div>
+    <div class="content">
+        <h3>Line break(br)</h3>
+        <h4>Without line break &lt;br/&gt;</h4>
+        <code>
+            &lt;span&gt; I love to code &lt;/span&gt; <br>
+            &lt;span&gt; I want to be a web Developer &lt;/span&gt;
+        </code>
+
+        <h4>With line break &lt;br/&gt;</h4>
+        <code>
+            &lt;span&gt; I love to code &lt;/span&gt; 
+            &lt;br/&gt; <br>
+            &lt;span&gt; I want to be a web Developer &lt;/span&gt;
+        </code>
+    </div>
+    <div class="content">
+        <h3>Text Formatting(bold, strong, small, italic)</h3>
+        <p><b>I am bold</b></p>
+        <p><i>I am italic</i></p>
+        <h3>Text Formatting(small, strong)</h3>
+        <p><small>I am small</b></p>
+        <p><strong>I am string</strong></p>
+        <div class="note">
+            <h6>Strong vs bold</h6>
+            <p>Strong tag is used style with meaning on the other hand bold tag is used just style.</p>
+        </div>
+    </div>
+    <div class="content">
+            <h3>Block vs Inline</h3>
+            <p> By default, some html tag are block element and some are inline element. Block elements are occupied total width of device. on the other hand, inline elements are occupied as the element's content needed. Block elements have width and height property, on the other hand inline elements don't have width and height property. To give inline element width and height property we use display: inline-block in css. </p>
+            <h4>Some Block element</h4>
+                <p>
+                &lt;address&gt; &lt;article&gt;&lt;aside&gt;&lt;blockquote&gt;
+                &lt;canvas&gt; &lt;dd&gt;&lt;div&gt;&lt;dt&gt;
+                &lt;fieldset&gt; &lt;figcaption&gt;&lt;figur&gt;&lt;footer&gt;
+                &lt;form&gt; &lt;ht&gt;to&lt;h6&gt;&lt;header&gt;
+                &lt;hr&gt; &lt;li&gt;&lt;main&gt;&lt;nav&gt;
+                &lt;noscript&gt; &lt;ol&gt;&lt;ul&gt;&lt;p&gt;
+                &lt;pre&gt; &lt;section&gt;&lt;table&gt;&lt;video&gt;
+            </p>
+     
+            <h4>Some inline element</h4>
+                <p>
+                &lt;a&gt; &lt;abbr&gt;&lt;b&gt;&lt;bdo&gt;
+                &lt;big&gt; &lt;br&gt;&lt;button&gt;&lt;cite&gt;
+                &lt;code&gt; &lt;dfn&gt;&lt;em&gt;&lt;i&gt;
+                &lt;img&gt; &lt;input&gt;kbd&lt;label&gt;&lt;map&gt;
+                &lt;object&gt; &lt;output&gt;&lt;q&gt;&lt;samp&gt;
+                &lt;script&gt; &lt;select&gt;&lt;small&gt;&lt;span&gt;
+                &lt;strong&gt; &lt;sub&gt;&lt;textarea&gt;&lt;time&gt;&lt;tt&gt;
+            </p>
+       
+        </div>
+        <div class="content">
+            <h3>Html List(ordered, unordered)</h3>
+            <ul>
+                <li>The <span class="red">&lt;li&gt;</span>  tag defines a <span class="red">list item</span></li>
+                <li>The <span class="red">&lt;li&gt;</span> is used inside <span class="red">ordered lists(&lt;ol&gt;) </span> and <span class="red">unordered lists(&lt;ol&gt;)</span></li>
+                <li>In <span class="red">&lt;ul&gt;</span>, the list items will usually be displayed with bullet points.</li>
+                <li>In <span class="red">&lt;ol&gt;</span>, the list items will usually be displayed with numbers or letters.</li>
+            </ul>
+
+            <h4>Ordered List Type</h4>
+            <p>By default ordered list are numbered l, 2, 3 etc list. We can change order number with type property</p>
+            <div class="flex">
+                <div class="flexItem">
+                    <h6>type= "1"</h6>
+                   <ol type="1">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ol>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "a"</h6>
+                   <ol type="a">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ol>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "A"</h6>
+                   <ol type="A">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ol>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "i"</h6>
+                   <ol type="i">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ol>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "I"</h6>
+                   <ol type="I">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ol>
+                </div>
+            </div>
+
+            <h4>Unordered List Type</h4>
+            <p>By default ordered list are disc(bold dot) etc list. We can change unorder list style with type property</p>
+            <div class="flex">
+                <div class="flexItem">
+                    <h6>type= "disc"</h6>
+                   <ul type="disc">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ul>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "circle"</h6>
+                   <ul type="circle">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ul>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "square"</h6>
+                   <ul type="square">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ul>
+                </div>
+                <div class="flexItem">
+                    <h6>type= "none"</h6>
+                   <ul type="none">
+                    <li>Bangla</li>
+                    <li>English</li>
+                    <li>ICT</li>
+                   </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="content">
+            <h3>Anchor Tag</h3>
+            <p>The <span class="red">&lt;a&gt;</span> tag defines a hyperlink, which is used to link from one page to another. <span class="red">Some attributes:</span></p>
+            <ul>
+                <li><span class="red">href:</span> Specifies the URL of the page link gose to <br>
+                &lt;a href="http://www.google.com"&gt; <span class="green">Google</span> &lt;/a&gt;
+                </li>
+                <li><span class="red">target:</span>Specifies where to open the linked document. by default linked page will load in the same tab but we can set to open linked page different tap by setting target = "_blank" property.<br>
+                    &lt;a href="http://www.google.com" target = "_blank" &gt; <span class="green">Google</span> &lt;/a&gt;</li>
+                <li><span class="red">download:</span>Specifies that the target will be downloaded when a user clicks on the hyperlink<br>
+                    &lt;a href="./images/94225.png" <span class="violet">download</span> &gt; <span class="green">Google</span> &lt;/a&gt;</li>
+
+            </ul>
+        </div>
+
+        <div class="content">
+            <h3>Image Tag</h3>
+            <p>The<span class="red">&lt;img&gt; tag is used to embed an image in an HTML page. <span class="red">Some attribute</span></span></p>
+            <ul>
+                <li><span class="red">src:</span> Specifies the path to the image <br>
+                &lt;img src="./image/logo.png"&gt;
+                </li>
+                <li><span class="red">alt:</span>Specifies an alternate text for the image, if the image for some reason cannot be displayed<br>
+                    &lt;img src="./image/logo.png" alt ="This is a picture"&gt;
+               </li>
+                <li><span class="red">height:</span>Specifies the height of an image.<br>
+                    &lt;img src="./image/logo.png" alt ="This is a picture" height="300px"&gt;
+               </li>
+                <li><span class="red">height:</span>Specifies the width of an image.<br>
+                    &lt;img src="./image/logo.png" alt ="This is a picture" height="300px" width= "400px"&gt;
+               </li>
+
+            </ul>
+
+            <h4>Image path</h4>
+            <p>The<span class="red"> image path is used to specifies of an image in an HTML page. </p>
+            <ul>
+                <li> &lt;img src="picture.jpg"&gt; <br> 
+                <span class="red"> Specifies that picture.jpg is located in the <span class="violet">same folder</span> as the current folder</span></li>
+                <li> &lt;img src="images/picture.jpg"&gt; <br> 
+                <span class="red"> Specifies that picture.jpg is located in the <span class="violet">images folder</span> in the current folder</span></li>
+                <li> &lt;img src="/images/picture.jpg"&gt; <br> 
+                <span class="red"> Specifies that picture.jpg is located in the <span class="violet">images folder</span> in the root of the current folder</span></li>
+                <li> &lt;img src="../picture.jpg"&gt; <br> 
+                <span class="red"> Specifies that picture.jpg is located in the <span class="violet">folder one level up</span> from the current folder</span></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+
