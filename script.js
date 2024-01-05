@@ -29,15 +29,25 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 const topicItems = document.querySelectorAll(".topic");
-
+let listItem;
 topicItems.forEach((item) => {
+    
+    
     item.addEventListener('click', () => {
+        moduleCounter = 0;
+        topicItems.forEach((item)=>{
+            item.classList.remove("active");
+        })
+
+        item.classList.add("active") 
        const topicName = item.innerHTML.replace(/\s/g, '');
+
         fetch(`content.html`)
             .then(response => response.text())
             .then( function (data) {
                 document.getElementById("main").innerHTML = data;
                 if(modules[topicName]){
+                    item.classList.add("active");
                     let navList = "";
                     modules[topicName].forEach(function(list)  {
                         navList = `${navList}<li class="listItem">${list}</li> `;
@@ -47,8 +57,13 @@ topicItems.forEach((item) => {
                 }        
             })
             .then(function(){
-                document.querySelectorAll(".listItem").forEach((list, key)=>{
+                 listItem = document.querySelectorAll(".listItem");
+                listItem.forEach((list, key)=>{
                     list.addEventListener('click',function(){
+                        listItem.forEach((list)=>{
+                            list.classList.remove("active");
+                        })
+                        list.classList.add("active");
                         moduleCounter=key;
                         const listData = list.innerHTML;
                         fetch(`${topicName}\\${listData}.html`)
@@ -64,10 +79,18 @@ topicItems.forEach((item) => {
                 }) 
             })
             .then(function(){
+                //const listItem = document.querySelectorAll(".listItem");
                 document.querySelectorAll(".nextBtn").forEach((btn)=>{
                     btn.addEventListener('click',function(){
+                        
+                        listItem.forEach((list)=>{
+                            list.classList.remove("active");
+
+                        })
+                        
                     if(moduleCounter<modules[topicName].length-1){
                         moduleCounter++;
+                        listItem[moduleCounter].classList.add("active");
                         fetch(`${topicName}\\${modules[topicName][moduleCounter]}.html`)
                         .then(response => response.text())
                         .then(function(data){
@@ -84,8 +107,13 @@ topicItems.forEach((item) => {
             .then(function(){
                 document.querySelectorAll(".prevBtn").forEach((btn)=>{
                     btn.addEventListener('click',function(){
+                        listItem.forEach((list)=>{
+                            list.classList.remove("active");
+
+                        })
                     if(moduleCounter>0){
                         moduleCounter--;
+                        listItem[moduleCounter].classList.add("active");
                         fetch(`${topicName}\\${modules[topicName][moduleCounter]}.html`)
                         .then(response => response.text())
                         .then(function(data){
