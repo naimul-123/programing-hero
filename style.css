@@ -3,7 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+table{
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid;
+    padding: 5px 10px;
+}
 #header{
     background-color: aquamarine;
     height: 60px;
@@ -47,15 +53,15 @@
     padding-top: 20px;
 
 }
-.active, .active:hover{
-    background-color: #04AA6D;
+.active{
+    background-color: #04AA6D!important;
     color: white;
 }
 .listItem:hover{
     background-color:#cccccc ;
 }
 .active:hover{
-    background-color: #04AA6D !important;
+    background-color: #048656 !important;
     color: white !important;
 }
 .listItem{

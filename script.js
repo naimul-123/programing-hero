@@ -1,10 +1,11 @@
 const modules = {html:['intro', 'structure', 'structure_Defination',
 'paragraph', 'button', 'heading','lineBreak', 'textFormating', 'block Vs inline',
-'list', 'anchor', 'image'
+'list', 'anchor', 'image', 'table','navigation', 'megaMenu', 'form'
 ], 
 css:[
    'intro', 'display','selector',
-]
+],
+git:[]
 }
 
 const module = Object.keys(modules);
@@ -27,21 +28,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 
-
 const topicItems = document.querySelectorAll(".topic");
 let listItem;
 topicItems.forEach((item) => {
-    
-    
     item.addEventListener('click', () => {
         moduleCounter = 0;
         topicItems.forEach((item)=>{
-            item.classList.remove("active");
-        })
+            if(item.classList.contains("active")){
+                item.classList.remove("active");
+            }
 
+        })
         item.classList.add("active") 
        const topicName = item.innerHTML.replace(/\s/g, '');
-
         fetch(`content.html`)
             .then(response => response.text())
             .then( function (data) {
@@ -53,15 +52,31 @@ topicItems.forEach((item) => {
                         navList = `${navList}<li class="listItem">${list}</li> `;
                     });
                     document.getElementById("navList").innerHTML = navList;
-
                 }        
             })
             .then(function(){
-                 listItem = document.querySelectorAll(".listItem");
+                listItem = document.querySelectorAll(".listItem");
+                listItem.forEach((list)=>{
+                    if(list.classList.contains("active")){
+                        list.classList.remove("active");
+                    }
+                    
+                })
+                listItem[0].classList.add("active");
+                fetch(`${topicName}\\${modules[topicName][0]}.html`)
+                .then(response => response.text())
+                .then(function(data){
+                document.getElementById('contentArea').innerHTML = data;  
+                })
+            })
+            .then(function(){
+                 
                 listItem.forEach((list, key)=>{
                     list.addEventListener('click',function(){
                         listItem.forEach((list)=>{
-                            list.classList.remove("active");
+                            if(list.classList.contains("active")){
+                                list.classList.remove("active");
+                            }
                         })
                         list.classList.add("active");
                         moduleCounter=key;
@@ -69,22 +84,20 @@ topicItems.forEach((item) => {
                         fetch(`${topicName}\\${listData}.html`)
                         .then(response => response.text())
                         .then(function(data){
-                            document.getElementById('contentArea').innerHTML = data;
-                             
+                        document.getElementById('contentArea').innerHTML = data; 
                         })
-                 
                     })
-
-                   
                 }) 
             })
             .then(function(){
-                //const listItem = document.querySelectorAll(".listItem");
+
                 document.querySelectorAll(".nextBtn").forEach((btn)=>{
                     btn.addEventListener('click',function(){
                         
                         listItem.forEach((list)=>{
-                            list.classList.remove("active");
+                            if(list.classList.contains("active")){
+                                list.classList.remove("active");
+                            }
 
                         })
                         
@@ -119,114 +132,15 @@ topicItems.forEach((item) => {
                         .then(function(data){
                             document.getElementById('contentArea').innerHTML = data;
                              
-                        })
-                        
+                        })  
                     }
                       
-                      //alert(moduleCounter)
                     })
                 }) 
             })
-
-            
             .catch(error => console.error('Error fetching content:', error));        
     });
 });
 
 
-
-document.querySelectorAll(".nextBtn").forEach((btn)=>{
-    btn.addEventListener('click',function(){
-      alert(moduleCounter);
-    })
-})
-
-
-//     const listTopic = document.getElementsByClassName("listItem")[0];
-//     console.log(listTopic.innerHTML)
-
-
-
-// const prevBtns = document.querySelectorAll(".prevBtn");
-// prevBtns.forEach((btn)=>{
-//     btn.addEventListener('click', ()=>{
-//         console.log(`button is clicked`)
-//         listitems.forEach((list)=>{
-//             list.classList.remove("active")
-//         });
-//         if(moduleCounter>0){
-//             moduleCounter--
-//             listitems[moduleCounter].classList.add('active')
-//             fetch(`html/${modules[moduleCounter]}.html`)
-//             .then(response=> response.text())
-//             .then(data=> document.getElementById("contentArea").innerHTML = data);
-//         }
-//         else{
-//             fetch(`html/${modules[moduleCounter]}.html`)
-//             .then(response=> response.text())
-//             .then(data=> document.getElementById("contentArea").innerHTML = data); 
-//         }
-
-
-//     })
-// })
-
-// const nextBtns = document.querySelectorAll(".nextBtn");
-// nextBtns.forEach((btn)=>{
-//     btn.addEventListener('click', ()=>{
-//         listitems.forEach((list)=>{
-//             list.classList.remove("active")
-//         });
-//         if(moduleCounter<modules.length-1){
-//             moduleCounter++
-//             listitems[moduleCounter].classList.add('active')
-//             fetch(`html/${modules[moduleCounter]}.html`)
-//             .then(response=> response.text())
-//             .then(data=> document.getElementById("contentArea").innerHTML = data);
-//         }
-//     })
-// })
-
-
-
-    
-
-
-
-// //     Object.keys(modules).forEach((key)=>{
-// //         navList = `${navList}<li class="topic">${key} <ul class = "topic">` 
-// //         modules[key].forEach((topic)=>{
-// //             navList = `${navList}<li class="listItem">${topic}</li> ` 
-// //         })
-
-// //         navList = `${navList}</ul> ` 
-
-      
-// //    })
-
-// //    console.log(navList)
-
-// //     document.getElementById("navList").innerHTML= navList;
-
-//     const listitems = document.querySelectorAll(".listItem");
-//     listitems.forEach((list)=>{
-//         list.addEventListener('click',()=>{
-            
-//             modules["html"].map((module, index)=>{
-//                 listitems[index].classList.remove("active");  
-//                 if(module=== list.innerHTML){
-//                     moduleCounter= index;
-//                     fetch(`html/${module}.html`)
-//                     .then(response=> response.text())
-//                     .then(data=> document.getElementById("contentArea").innerHTML = data);
-//                     list.classList.add("active");
-//                 }
-
-             
-//                 //console.log(moduleCounter)
-//             })
-            
-//         })
-//     })
-    
 
